@@ -1,0 +1,49 @@
+﻿<!-- TASKS DETAILS UI DEFINITION-->
+
+<phone:PhoneApplicationPage 
+    x:Class="DialedIn.View.GroupDetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="PageTitle" Text="" Style="{StaticResource PhoneTextNormalStyle}" />
+            <TextBlock x:Name="TaskTitleTextBlock" Text="" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="116" HorizontalAlignment="Left" Margin="9,6,0,0" Name="GroupTitleBlock" VerticalAlignment="Top" Width="428" TextWrapping="Wrap" FontSize="32" />
+            <TextBlock Height="147" HorizontalAlignment="Left" Margin="6,175,0,0" Name="OwnerTextBlock" Text="" VerticalAlignment="Top" Width="425" FontSize="30" TextWrapping="Wrap" />
+            <TextBlock Height="165" HorizontalAlignment="Left" Margin="9,0,0,26" Name="GroupMembersTextBox" Text="" VerticalAlignment="Bottom" Width="431" FontSize="30" TextWrapping="Wrap" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="6,128,0,0" Name="textBlock1" Text="Group Owner" VerticalAlignment="Top" Foreground="#FFDDA900" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,340,0,0" Name="GroupMembersTextBlock" Text="Group Members" VerticalAlignment="Top" Foreground="#FFDDA900" />
+        </Grid>
+        <TextBlock FontFamily="Courier New" FontSize="32" FontWeight="ExtraBold" Foreground="White" Height="44" Name="textBlock3" Text="Dialed-In" Width="178" Margin="302,0,0,117" />
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.check.rest.png" Text="Set Group" Click="SetButton_Click"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar.edit.rest.png" Text="Edit" Click="EditButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

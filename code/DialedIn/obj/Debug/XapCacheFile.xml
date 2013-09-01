@@ -1,0 +1,17 @@
+﻿<xapCache source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Bin\Debug\DialedIn.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="3/12/2011 1:38:29 PM">
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="2/26/2011 11:27:09 AM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\obj\Debug\DialedIn.dll" archivePath="DialedIn.dll" lastWriteTime="3/12/2011 1:38:28 PM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="9/1/2010 4:51:10 AM" />
+  <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v7.0\Libraries\Silverlight\Microsoft.Phone.Controls.Maps.dll" archivePath="Microsoft.Phone.Controls.Maps.dll" lastWriteTime="10/17/2010 1:11:20 AM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="2/23/2011 8:18:19 PM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Background.png" archivePath="Background.png" lastWriteTime="2/23/2011 8:17:16 PM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Images\appbar.add.rest.png" archivePath="Images\appbar.add.rest.png" lastWriteTime="2/26/2011 11:27:08 AM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Images\appbar.check.rest.png" archivePath="Images\appbar.check.rest.png" lastWriteTime="2/27/2011 7:02:32 PM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Images\appbar.edit.rest.png" archivePath="Images\appbar.edit.rest.png" lastWriteTime="2/26/2011 11:27:08 AM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Images\appbar.feature.camera.rest.png" archivePath="Images\appbar.feature.camera.rest.png" lastWriteTime="2/26/2011 11:27:08 AM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Images\appbar.feature.search.rest.png" archivePath="Images\appbar.feature.search.rest.png" lastWriteTime="8/17/2010 4:41:24 PM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Images\appbar.manage.rest.png" archivePath="Images\appbar.manage.rest.png" lastWriteTime="2/27/2011 7:02:32 PM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Images\appbar.save.rest.png" archivePath="Images\appbar.save.rest.png" lastWriteTime="2/26/2011 11:27:08 AM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="2/26/2011 11:27:07 AM" />
+  <file source="C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\DialedIn\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="3/12/2011 1:38:29 PM" />
+</xapCache>

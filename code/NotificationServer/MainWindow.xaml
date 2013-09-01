@@ -1,0 +1,138 @@
+﻿<Window x:Class="NotificationServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:app="clr-namespace:NotificationServer" WindowStartupLocation="CenterScreen"        
+        Title="Push Notifications Client" Height="1048" Width="1000" Top="300" Left="400">
+    <Grid UseLayoutRounding="True" TextOptions.TextRenderingMode="ClearType">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="330" />
+            <RowDefinition Height="440*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MaxWidth="300" MinWidth="200" Width="278*" />
+            <ColumnDefinition MaxWidth="700" MinWidth="560" Width="560*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="0*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="3" Margin="0,0,0,0" Grid.RowSpan="5">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Offset="0" Color="SlateGray" />
+                    <GradientStop Offset="1" Color="LightBlue" />
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <TextBlock Grid.ColumnSpan="5" Margin="20,5,10,20" FontSize="56" FontWeight="Medium" Text="Dialed In Notification Server" TextOptions.TextRenderingMode="Aliased" TextOptions.TextHintingMode="Animated" />
+
+        <!-- Input area for task data -->
+
+        <HeaderedContentControl Grid.Row="1" Margin="15,0,0,0" FontSize="24" FontWeight="Medium" Header="Task Data">
+            <Grid Height="300" VerticalAlignment="Top">
+                <ComboBox x:Name="cmbTaskId" Height="20" VerticalAlignment="Top" Foreground="Black" />
+                <ComboBox x:Name="cmbGroupTitle" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,25,0,255" />
+                <ComboBox x:Name="cmbTitle" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,50,0,230" />
+                <ComboBox x:Name="cmbDescription" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,75,0,205" />
+                <ComboBox x:Name="cmbAssignedTo" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,100,0,180" />
+                <ComboBox x:Name="cmbDueDate" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,125,0,155" />
+                <ComboBox x:Name="cmbLocation" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,150,0,130" />
+                <ComboBox x:Name="cmbImageUrl" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,175,0,105" />
+                <ComboBox x:Name="cmbLastModifiedBy" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,200,0,80" />
+                <ComboBox x:Name="cmbTaskFiltered" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,225,0,55" />
+                <ComboBox x:Name="cmbTaskCompleted" Height="20" VerticalAlignment="Center" Foreground="Black" Margin="0,250,0,30" />
+                <Slider x:Name="sldCounter" Height="20" VerticalAlignment="Center" Background="Black" Margin="0,275,0,5" Maximum="10" Minimum="0" Orientation="Horizontal" Value="0" />
+            </Grid>
+        </HeaderedContentControl>
+
+        <!-- Selection for notification type -->
+
+        <HeaderedContentControl Grid.Column="1" Grid.Row="1" Margin="64,0,32,0" FontSize="24" FontWeight="Medium" Header="Deliver As">
+            <Grid Height="156" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="168" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name="rbnTile" Margin="0,0,40,0" Style="{StaticResource HeaderedOpacityRadioButton}" Tag="Tile" IsChecked="True">
+                    <Grid Width="128" Height="128" VerticalAlignment="Top" Background="Black" TextOptions.TextHintingMode="Animated">
+                        <Image Source="Images/Background.png" Stretch="UniformToFill" />
+                    </Grid>
+                </RadioButton>
+                <RadioButton x:Name="rbnHttp" Grid.Column="1" VerticalAlignment="Top" Style="{StaticResource HeaderedOpacityRadioButton}" Tag="HTTP Message">
+                    <Border Height="38" Background="#B0000000" BorderBrush="White" BorderThickness="0">
+                        <TextBlock Margin="10,0" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" Tag="HTTP message here">
+                            <Run Text="{Binding ElementName=cmbTaskId, Path=SelectedItem}" />,
+                            <Run Text="{Binding ElementName=cmbTitle, Path=SelectedValue}" />,
+                            <Run Text="{Binding ElementName=cmbDescription, Path=SelectedValue}" />,
+                            <Run Text="..." />
+                        </TextBlock>
+                    </Border>
+                </RadioButton>
+                <RadioButton x:Name="rbnToast" Grid.Column="1" VerticalAlignment="Bottom" Style="{StaticResource HeaderedOpacityRadioButton}" Tag="Toast Message">
+                    <Border Height="38" Background="#B0000000" BorderBrush="White" BorderThickness="0">
+                        <TextBox x:Name="txtToastMessage" Height="20" Style="{StaticResource InvisibleTextBox}" Margin="10,4" Tag="Type any message here" FontSize="14" FontWeight="Bold" />
+                    </Border>
+                </RadioButton>
+            </Grid>
+        </HeaderedContentControl>
+
+        <!-- Send button -->
+
+        <HeaderedContentControl Width="128" Grid.Column="2" Grid.Row="1" FontSize="24" FontWeight="Medium" Margin="0,0,15,138">
+            <Button x:Name="btnSend" Cursor="Hand" Click="btnSend_Click" FocusVisualStyle="{x:Null}" Height="132">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Height="128" VerticalAlignment="Bottom" Background="{x:Null}">
+                            <Grid x:Name="g" Width="70" Height="70" Margin="0,16,0,0" VerticalAlignment="Top">
+                                <Ellipse x:Name="e" Fill="#B0000000" Stroke="White" StrokeThickness="3" />
+                                <Path Width="12" Height="16" Margin="2,0,-2,0" Data="M0,0 L1,0.5 L0,1 Z" Fill="White" Stretch="Fill" />
+                            </Grid>
+                            <TextBlock HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" FontSize="20" Foreground="DarkSlateGray" Text="Send" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="e" Property="Fill" Value="#000000" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="g" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform Y="2" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </HeaderedContentControl>
+
+        <!-- Monitor history of sent notifications -->
+
+        <HeaderedContentControl Grid.Row="2" Margin="0,5,0,0" FontSize="24" FontWeight="Medium" Header="History" Grid.ColumnSpan="3" Padding="15,0" Grid.RowSpan="2">
+            <app:PushNotificationsLogViewer x:Name="Log" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="1" />
+        </HeaderedContentControl>
+
+        <Border Background="#A0315b89" Height="30" Grid.Row="3" Grid.ColumnSpan="3">
+
+        </Border>
+
+        <Grid Grid.Row="3" Margin="15,0" VerticalAlignment="Center" Grid.ColumnSpan="3" TextElement.FontSize="14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Text="Status: " />
+                <TextBlock x:Name="txtStatus" Text="Unknown" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="10,0,00,0">
+                <TextBlock Text="Active Clients: " />
+                <TextBlock x:Name="txtActiveConnections" Text="0" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

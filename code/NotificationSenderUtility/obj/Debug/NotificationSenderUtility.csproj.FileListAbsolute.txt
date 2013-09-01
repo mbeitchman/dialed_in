@@ -1,0 +1,5 @@
+C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\NotificationSenderUtility\bin\Debug\NotificationSenderUtility.dll
+C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\NotificationSenderUtility\bin\Debug\NotificationSenderUtility.pdb
+C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\NotificationSenderUtility\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\NotificationSenderUtility\obj\Debug\NotificationSenderUtility.dll
+C:\Users\Lauren\Documents\Visual Studio 2010\Projects\DialedIn\NotificationSenderUtility\obj\Debug\NotificationSenderUtility.pdb
